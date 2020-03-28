@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 import heroes from '../../assets/heroes.png';
 
 export default function Logon() {
@@ -32,10 +32,10 @@ export default function Logon() {
   return (
     <div className="logon-container">
       <section className="form">
-        <img src={logo} alt="Logo" />
+        <img src={logo} alt="Logo" height={100} />
 
         <form onSubmit={handleLogin}>
-          <h1>Faça seu logon</h1>
+          <h1>Faça seu login</h1>
 
           <input
             placeholder="Sua ID"

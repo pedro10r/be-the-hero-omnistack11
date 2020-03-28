@@ -6,7 +6,7 @@ import api from '../../services/api';
 
 import './styles.css'
 
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/logo.png';
 
 export default function Profile() {
   const [incidents, setIncidents] = useState([]);
@@ -73,7 +73,7 @@ export default function Profile() {
             <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</p>
 
             <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-              <FiTrash2 size={20} color="#a8a8b3" />
+              <FiTrash2 size={20} />
             </button>
           </li>
         ))}
