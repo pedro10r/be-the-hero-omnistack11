@@ -12,7 +12,7 @@ routes.post('/sessions', SessionContrioller.create);
 
 routes.get('/ongs', OngController.index);
 
-routes.post('/ongs', celebrate({
+routes.post('/ongs', celebrate({ // Validação de dados
   [Segments.BODY]: Joi.object().keys({
     name: Joi.string().required(),
     email: Joi.string().required().email(),

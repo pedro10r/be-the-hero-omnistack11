@@ -9,14 +9,14 @@ import './styles.css'
 import logo from '../../assets/logo.png';
 
 export default function Profile() {
-  const [incidents, setIncidents] = useState([]);
+  const [incidents, setIncidents] = useState([]); // Usando estado
 
-  const history = useHistory();
+  const history = useHistory(); // History para navegação entre páginas
 
   const ongId = localStorage.getItem('ongId');
   const ongName = localStorage.getItem('ongName');
 
-  useEffect(() => {
+  useEffect(() => { // useEffect para mostrar os dados que o useState recebeu
     api.get('profile', {
       headers: {
         Authorization: ongId,
@@ -26,7 +26,7 @@ export default function Profile() {
     })
   }, [ongId]);
 
-  async function handleDeleteIncident(id) {
+  async function handleDeleteIncident(id) { // Função que deleta um caso
     try {
       await api.delete(`incidents/${id}`, {
         headers: {
@@ -40,7 +40,7 @@ export default function Profile() {
     }
   }
 
-  function handleLogout() {
+  function handleLogout() { // Função para Logout da ONG
     localStorage.clear();
 
     history.push('/');
@@ -53,7 +53,7 @@ export default function Profile() {
         <span>Bem vinda, {ongName}</span>
 
         <Link className="button" to="/incidents/new">Cadastrar novo caso</Link>
-        <button onClick={handleLogout} type="button">
+        <button onClick={handleLogout} type="button"> {/* Chama função de Logout */}
           <FiPower size={18} color="#E02041" />
         </button>
       </header>
@@ -70,6 +70,7 @@ export default function Profile() {
             <p>{incident.description}</p>
 
             <strong>VALOR:</strong>
+            {/* INTL serve para formatação de DATA/HORA, MOEDA, etc... (Nesse caso => Modeda) */}
             <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(incident.value)}</p>
 
             <button onClick={() => handleDeleteIncident(incident.id)} type="button">

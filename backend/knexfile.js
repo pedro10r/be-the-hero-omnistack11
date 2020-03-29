@@ -1,4 +1,5 @@
 // Update with your config settings.
+// Esse arquivo é baixado automaticamente qunado adicionamos o KNEX na aplicação
 
 module.exports = {
 

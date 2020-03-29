@@ -1,6 +1,6 @@
 const express = require('express');
-const cors = require('cors');
-const { errors } = require('celebrate');
+const cors = require('cors'); // Permite com que outros domínios acessem a aplicação
+const { errors } = require('celebrate'); // Faz a validação de dados da aplicação
 const routes = require('./routes');
 
 const app = express();

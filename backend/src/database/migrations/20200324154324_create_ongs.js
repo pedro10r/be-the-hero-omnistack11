@@ -9,6 +9,6 @@ exports.up = function (knex) { // Método UP => reponsável pela criação da ta
   })
 };
 
-exports.down = function (knex) {
+exports.down = function (knex) { // Método DOWN => reponsável por deletar uma tabela
   return knex.schema.dropTable('ongs');
 };

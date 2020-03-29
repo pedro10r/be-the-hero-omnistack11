@@ -17,7 +17,7 @@ export default function NewIncident() {
 
   const ongId = localStorage.getItem('ongId');
 
-  async function handleNewcident(e) {
+  async function handleNewcident(e) { // Função para adicionar um novo caso para ONG que esta logada
     e.preventDefault();
 
     const data = {
@@ -33,7 +33,7 @@ export default function NewIncident() {
         }
       })
 
-      history.push('/profile');
+      history.push('/profile'); // Volta para a pagina profile
 
     } catch (err) {
       alert('Erro ao cadastrar caso, tente novamente.')

@@ -1,4 +1,4 @@
-const generateUniqueId = require('../utils/generateUniqueId');
+const generateUniqueId = require('../utils/generateUniqueId'); // Cria um ID unico para cada ONG
 const connection = require('../database/connection');
 
 module.exports = {
@@ -8,7 +8,7 @@ module.exports = {
     return response.json(ongs);
   },
 
-  async create(request, response) {
+  async create(request, response) { //Fução para criar uma ONG
     const { name, email, whatsapp, city, uf } = request.body;
 
     const id = generateUniqueId();

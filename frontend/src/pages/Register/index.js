@@ -9,7 +9,7 @@ import './styles.css';
 import logo from '../../assets/logo.png'
 
 export default function Register() {
-  const [name, setName] = useState('');
+  const [name, setName] = useState(''); // Usando estado
   const [email, setEmail] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
   const [city, setCity] = useState('');
@@ -17,7 +17,7 @@ export default function Register() {
 
   const history = useHistory();
 
-  async function handleRegister(e) {
+  async function handleRegister(e) { // Cadastrando uma nova ONG
     e.preventDefault();
 
     const data = {
@@ -31,7 +31,7 @@ export default function Register() {
     try {
       const response = await api.post('ongs', data);
 
-      alert(`Seu ID de acesso: ${response.data.id}`);
+      alert(`Seu ID de acesso: ${response.data.id}`); // Mosrra um alerta com ID gerado para ONG, com esse ID faz login
       history.push('/');
 
     } catch (err) {
@@ -54,7 +54,7 @@ export default function Register() {
           </Link>
         </section>
 
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleRegister}> {/* Assim que o submit é acionado, executa a função */}
           <input
             placeholder="Nome da ONG"
             value={name}

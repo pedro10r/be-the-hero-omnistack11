@@ -1,6 +1,6 @@
 const connection = require('../database/connection');
 
-module.exports = {
+module.exports = { // Função que msotra os Casos da ONG que esta logada
   async index(request, response) {
     const ong_id = request.headers.authorization;
 

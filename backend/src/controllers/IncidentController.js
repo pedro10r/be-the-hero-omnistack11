@@ -1,8 +1,8 @@
-const connection = require('../database/connection');
+const connection = require('../database/connection'); // Conexão com o banco de dados
 
 module.exports = {
-  async index(request, response) { // Paginação
-    const { page = 1 } = request.query;
+  async index(request, response) {
+    const { page = 1 } = request.query; // Paginação com banco de dados
 
     const [count] = await connection('incidents').count();
 
@@ -24,7 +24,7 @@ module.exports = {
     return response.json(incidents);
   },
 
-  async create(request, response) {
+  async create(request, response) {  // Função para criar um incident
     const { title, description, value } = request.body;
     const ong_id = request.headers.authorization;
 
@@ -38,7 +38,7 @@ module.exports = {
     return response.json({ id });
   },
 
-  async delete(request, response) {
+  async delete(request, response) {  // Função para  deletar um incident
     const { id } = request.params;
     const ong_id = request.headers.authorization;
 

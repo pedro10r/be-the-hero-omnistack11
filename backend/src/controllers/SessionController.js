@@ -1,6 +1,6 @@
 const connection = require('../database/connection');
 
-module.exports = {
+module.exports = { // Função que cria uma ONG
   async create(request, response) {
     const { id } = request.body;
 
